@@ -9,9 +9,10 @@ import NavBar from './NavBar';
 import {ThemeSwitcher} from './react-bootstrap-theme-switcher/index';
 import About from './About';
 import history from './history';
+import ReactGA from 'react-ga';
 
 document.title = "News!";
-import ReactGA from 'react-ga';
+
 ReactGA.initialize('UA-77295764-3');
 ReactDOM.render(
     <Router basename={'/'} history={history}>
