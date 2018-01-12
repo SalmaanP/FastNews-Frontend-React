@@ -79,9 +79,9 @@ class About extends Component {
 
                     <p align="justify">
                         The web server runs on Go <sup>
-                        <small>(used to be Node.js with PM2, v1 you will be missed)</small>
+                        <small>(used to be Node.js with PM2, v1.0 you will be missed)</small>
                     </sup>. It
-                        responds to API calls with JSON data. Go gives C++ level performance while being super
+                        responds to API calls with JSON data. Go supposedly gives C++ level performance while being super
                         easy to code in. It is also extremely simple to create multithreaded applications in Go.
                         This part is
                         the backend and is completely decoupled from the application (frontend) that you are "seeing".
