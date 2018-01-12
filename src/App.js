@@ -14,7 +14,13 @@ import history from './history';
 import moment from 'moment';
 import Spinner from 'react-spinkit';
 
-const host = 'http://localhost:12345';
+let mode = 'production';
+let host = '';
+if (mode === 'production') {
+    host ='https://fastnews.me'
+} else {
+    host = 'http://localhost:12345';
+}
 
 function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.substring(1);
