@@ -1,0 +1,494 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.container::before {
+    display: none;
+}
+
+.row::before {
+    display: none;
+}
+
+.paginationGrid {
+    display: grid;
+    grid-template-rows: max-content max-content;
+    grid-template-areas: "paginationLeft paginationRight"
+}
+
+.paginationLeft {
+    grid-area: paginationLeft;
+    justify-self: left;
+}
+
+.paginationRight {
+    grid-area: paginationRight;
+    justify-self: right;
+}
+
+
+.specificGrid {
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 6%;
+    display: grid;
+    grid-gap: 20px 20px;
+    grid-template-rows: max-content max-content max-content max-content;
+    grid-template-areas: "specificHeader"
+                         "specificInfo"
+                         "specificBody"
+                         "specificFooter"
+}
+
+.specificHeader {
+    grid-area: specificHeader;
+    text-align: center;
+}
+
+.specificInfo{
+    grid-area: specificInfo;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-areas: "specificDate specificDomain";
+}
+
+.specificDate {
+    grid-area: specificDate;
+}
+
+.specificDomain {
+    grid-area: specificDomain;
+    text-align: right;
+}
+
+.specificBody {
+    grid-area: specificBody;
+}
+
+.specificFooter{
+    grid-area: specificFooter;
+    display: grid;
+    grid-template-columns: 0.25fr 0.50fr 0.25fr;
+    grid-template-areas: "specificComments specificShare specificScore";
+}
+
+.specificComments {
+    grid-area: specificComments;
+}
+
+.specificScore {
+    grid-area: specificScore;
+    text-align: right;
+}
+
+.specificShare {
+    grid-area: specificShare;
+    text-align: center;
+}
+
+
+
+.layoutGrid {
+    display: grid;
+    grid-gap: 20px 20px;
+    grid-auto-rows: minMax(100px, auto);
+    grid-auto-flow: row;
+}
+
+.articleCard {
+    display: grid;
+    grid-template-rows: 100px 1fr 30px;
+    grid-template-areas: "articleHeader"
+                         "articleBody"
+                         "articleFooter";
+    padding-bottom: 1.25em !important;
+
+}
+
+.articleHeader {
+    grid-area: articleHeader;
+}
+
+.articleBody {
+    grid-area: articleBody;
+}
+
+.articleFooter {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-areas: "articleKeypoints articleDomain";
+    grid-area: articleFooter;
+}
+
+.articleKeypoints {
+    grid-area: articleKeypoints;
+    justify-self: start;
+    align-self: start;
+}
+
+.articleDomain {
+    grid-area: articleDomain;
+    justify-self: end;
+    align-self: end;
+}
+
+@media only screen and (min-width: 600px) {
+    .layoutGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .layoutGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/*https://codepen.io/ndeniche/pen/ljbDL*/
+.close {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    /*opacity: 0.5 !important;*/
+    /*padding-right: 5%;*/
+}
+.close:hover::before, .close:hover::after {
+    background: #1ebcc5;
+}
+.close::before, .close::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #1ebcc5;
+}
+.close::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.close::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.close.thick::before, .close.thick::after {
+    height: 4px;
+    margin-top: -2px;
+}
+
+.close.warp::before, .close.warp::after {
+    border-radius: 120% 0;
+}
+
+.close.hairline::before, .close.hairline::after {
+    height: 1px;
+}
+
+.nav-item {
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+
+
+/*http://sharingbuttons.io/*/
+.previousFancyDark,
+.nextFancyDark {
+    color: white;
+    border: 1px solid #95a5a6;
+}
+
+
+.previousFancyDark:hover,
+.nextFancyDark:hover {
+    background-color: white;
+}
+
+.buttonPaginationDark {
+    font-size: 1em;
+    font-family: 'Ropa Sans', sans-serif;
+    background-color: #95a5a6;
+    padding: 0px 15px;
+
+    margin: 10px;
+
+    transition:all .2s linear;
+    -o-transition:all .2s linear;
+    -moz-transition:all .2s linear;
+    -webkit-transition:all .2s linear;
+}
+
+.buttonPaginationDark:hover {
+    color: #95a5a6;
+}
+
+
+
+
+.previousFancyLight,
+.nextFancyLight {
+    color: #95a5a6;
+    border: 1px solid #95a5a6;
+}
+
+
+.previousFancyLight:hover,
+.nextFancyLight:hover {
+    background-color: #95a5a6;
+}
+
+.buttonPaginationLight {
+    font-size: 1em;
+    font-family: 'Ropa Sans', sans-serif;
+    background-color: white;
+    padding: 0px 15px;
+
+    margin: 10px;
+
+    transition:all .2s linear;
+    -o-transition:all .2s linear;
+    -moz-transition:all .2s linear;
+    -webkit-transition:all .2s linear;
+}
+
+.buttonPaginationLight:hover {
+    color: white;
+}
+
+
+
+
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+    display: inline-block
+}
+
+.resp-sharing-button__link {
+    text-decoration: none;
+    color: #fff;
+    margin: 0.5em
+}
+
+.resp-sharing-button {
+    border-radius: 5px;
+    transition: 25ms ease-out;
+    padding: 0.5em 0.75em;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+.resp-sharing-button__icon svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.4em;
+    vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+    margin: 0;
+    vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+    stroke: #fff;
+    fill: none
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+    fill: #fff;
+    stroke: none
+}
+
+.resp-sharing-button--twitter {
+    background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+    background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+    background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+    background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+    background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+    background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+    background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+    background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+    background-color: #5f99cf
+}
+
+.resp-sharing-button--reddit:hover {
+    background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+    background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+    background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+    background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+    background-color: #046293
+}
+
+.resp-sharing-button--email {
+    background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+    background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+    background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+    background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+    background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+    background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+    background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--vk {
+    background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+    background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+    background-color: #3b5998;
+    border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+    background-color: #2d4373;
+    border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+    background-color: #55acee;
+    border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+    background-color: #2795e9;
+    border-color: #2795e9;
+}
+
+.resp-sharing-button--google {
+    background-color: #dd4b39;
+    border-color: #dd4b39;
+}
+
+.resp-sharing-button--google:hover,
+.resp-sharing-button--google:active {
+    background-color: #c23321;
+    border-color: #c23321;
+}
+
+.resp-sharing-button--email {
+    background-color: #777777;
+    border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+    background-color: #5e5e5e;
+    border-color: #5e5e5e;
+}
+
+.resp-sharing-button--reddit {
+    background-color: #5f99cf;
+    border-color: #5f99cf;
+}
+
+.resp-sharing-button--reddit:hover,
+.resp-sharing-button--reddit:active {
+    background-color: #3a80c1;
+    border-color: #3a80c1;
+}
+

@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "react-bootstrap-theme-switcher",
+        "scope": null,
+        "escapedName": "react-bootstrap-theme-switcher",
+        "name": "react-bootstrap-theme-switcher",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "E:\\Projects\\fastnews_react"
+    ]
+  ],
+  "_from": "react-bootstrap-theme-switcher@latest",
+  "_id": "react-bootstrap-theme-switcher@1.0.7",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/react-bootstrap-theme-switcher",
+  "_nodeVersion": "6.11.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/react-bootstrap-theme-switcher-1.0.7.tgz_1507107212372_0.8192753468174487"
+  },
+  "_npmUser": {
+    "name": "raythree",
+    "email": "bill@ray3.io"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-bootstrap-theme-switcher",
+    "scope": null,
+    "escapedName": "react-bootstrap-theme-switcher",
+    "name": "react-bootstrap-theme-switcher",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-bootstrap-theme-switcher/-/react-bootstrap-theme-switcher-1.0.7.tgz",
+  "_shasum": "0a9ad339d67c70d8a928b8a205359406a99f1f5e",
+  "_shrinkwrap": null,
+  "_spec": "react-bootstrap-theme-switcher",
+  "_where": "E:\\Projects\\fastnews_react",
+  "author": {
+    "name": "Bill Walker",
+    "email": "bill@ray3.io",
+    "url": "http://ray3.io"
+  },
+  "bugs": {
+    "url": "https://github.com/raythree/react-bootstrap-theme-switcher/issues"
+  },
+  "dependencies": {},
+  "description": "A React component to select and switch among Bootstrap (Bootswatch) Themes",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "prop-types": "^15.5.10",
+    "rimraf": "^2.5.4"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "0a9ad339d67c70d8a928b8a205359406a99f1f5e",
+    "tarball": "https://registry.npmjs.org/react-bootstrap-theme-switcher/-/react-bootstrap-theme-switcher-1.0.7.tgz"
+  },
+  "gitHead": "dd975e6df0dcfce1da8d5ef59bc19df027774b39",
+  "homepage": "https://github.com/raythree/react-bootstrap-theme-switcher#readme",
+  "keywords": [
+    "React",
+    "theme",
+    "Bootstrap"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "raythree",
+      "email": "bill@ray3.io"
+    }
+  ],
+  "name": "react-bootstrap-theme-switcher",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "react": ">=0.14",
+    "bootstrap": "~3.3.7"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raythree/react-bootstrap-theme-switcher.git"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "clean": "rimraf ./lib",
+    "prepublish": "npm run build"
+  },
+  "version": "1.0.7"
+}
