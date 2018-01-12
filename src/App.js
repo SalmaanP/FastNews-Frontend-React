@@ -22,6 +22,7 @@ if (mode === 'production') {
     host = 'http://localhost:12345';
 }
 
+
 function capitalize(s) {
     return s.charAt(0).toUpperCase() + s.substring(1);
 }

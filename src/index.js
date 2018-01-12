@@ -11,7 +11,8 @@ import About from './About';
 import history from './history';
 
 document.title = "News!";
-
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-77295764-3');
 ReactDOM.render(
     <Router basename={'/'} history={history}>
         <ThemeSwitcher storeThemeKey={'dsffffa'} themes={['readable', 'darkly']} themePath="/themes" defaultTheme="readable">
