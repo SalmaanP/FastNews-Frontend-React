@@ -44,7 +44,7 @@ class NavBar extends Component {
 
     componentWillReceiveProps(nextProps) {
 
-        console.log(nextProps);
+        // console.log(nextProps);
 
         if (nextProps.location.pathname.startsWith('/search') || nextProps.location.pathname.startsWith('/article')) {
 
@@ -67,7 +67,6 @@ class NavBar extends Component {
 
             if (['science', 'technology', 'europe', 'canada', 'china', 'upliftingnews'].includes(path)) {
 
-                console.log('ok');
                 if (path === 'upliftingnews') {
                     moreLabel = 'Uplifting News';
                 } else {
