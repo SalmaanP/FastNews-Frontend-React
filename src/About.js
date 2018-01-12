@@ -4,8 +4,14 @@
 import React, {Component} from 'react';
 import './About.css';
 import Link from "react-router-dom/es/Link";
+import ReactGA from 'react-ga';
 
 class About extends Component {
+
+
+    componentDidMount() {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }
 
     render() {
 

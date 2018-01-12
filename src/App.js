@@ -13,6 +13,7 @@ import axios from 'axios';
 import history from './history';
 import moment from 'moment';
 import Spinner from 'react-spinkit';
+import ReactGA from 'react-ga';
 
 let mode = 'production';
 let host = '';
@@ -83,11 +84,9 @@ class App extends Component {
         }
 
         if (this.state.isSearch) {
-            console.log('inseach');
             this.searchArticles(requestCategory, this.props.match.params.pageNo || 0, this.props.match.params.searchString);
 
         } else if (this.state.view === 'grid') {
-            console.log('ingrid)');
             this.requestArticles(requestCategory, this.props.match.params.pageNo || 0);
         } else if (this.state.view === 'article') {
             this.requestArticle(requestCategory, this.props.match.params.articleId);
@@ -140,7 +139,11 @@ class App extends Component {
                         view: 'grid',
                         isSearch: false,
                         isLoading: false
-                    }, () => {document.title = "News From " + capitalize(this.state.category)});
+                    }, () => {
+                        document.title = "News From " + capitalize(this.state.category);
+                        ReactGA.pageview(window.location.pathname + window.location.search);
+
+                    });
                 })
         });
 
@@ -162,6 +165,8 @@ class App extends Component {
                         isLoading: false
                     });
                     document.title = res.data.Title;
+                    ReactGA.pageview(window.location.pathname + window.location.search);
+
                 })
         });
 
@@ -182,7 +187,11 @@ class App extends Component {
                         isSearch: true,
                         searchString,
                         isLoading: false
-                    }, () => { document.title = "Search " + capitalize(this.state.category) + " : " + this.state.searchString});
+                    }, () => {
+                        document.title = "Search " + capitalize(this.state.category) + " : " + this.state.searchString;
+                        ReactGA.pageview(window.location.pathname + window.location.search);
+
+                    });
 
 
                 })

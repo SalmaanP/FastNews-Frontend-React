@@ -13,9 +13,16 @@ import ReactGA from 'react-ga';
 
 document.title = "News!";
 
+
 ReactGA.initialize('UA-77295764-3');
+ReactGA.pageview(window.location.pathname + window.location.search);
+function fireTracking() {
+    ReactGA.pageview(window.location.hash);
+}
+
+
 ReactDOM.render(
-    <Router basename={'/'} history={history}>
+    <Router onUpdate={fireTracking} basename={'/'} history={history}>
         <ThemeSwitcher storeThemeKey={'dsffffa'} themes={['readable', 'darkly']} themePath="/themes" defaultTheme="readable">
 
             <NavBar/>
