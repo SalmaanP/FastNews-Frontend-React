@@ -3,7 +3,7 @@
  */
 
 import React, {Component} from 'react';
-import {NavLink, Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import history from './history';
 import {ThemeChooser} from './react-bootstrap-theme-switcher/index';

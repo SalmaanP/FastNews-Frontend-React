@@ -1,18 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Link} from 'react-router-dom';
 import {
     Card,
-    CardImg,
     CardText,
-    CardBlock,
     CardTitle,
     CardSubtitle,
     Button,
     CardHeader,
-    Row,
-    Col,
-    Container,
     CardBody
 } from 'reactstrap';
 import axios from 'axios';
@@ -159,7 +153,7 @@ class App extends Component {
                         view: 'article',
                         isSearch: false,
                         isLoading: false
-                    })
+                    });
                     document.title = res.data.Title;
                 })
         });
@@ -234,18 +228,18 @@ class App extends Component {
 
     increment() {
         if (this.state.isSearch) {
-            history.push('/search/' + this.state.category + '/' + this.state.searchString + '/' + String(parseInt(this.state.pageNo) + 1));
+            history.push('/search/' + this.state.category + '/' + this.state.searchString + '/' + String(parseInt(this.state.pageNo, 10) + 1));
         } else {
-            history.push('/' + this.state.category + '/' + String(parseInt(this.state.pageNo) + 1));
+            history.push('/' + this.state.category + '/' + String(parseInt(this.state.pageNo, 10) + 1));
         }
     }
 
     decrement() {
 
         if (this.state.isSearch) {
-            history.push('/search/' + this.state.category + '/' + this.state.searchString + '/' + String(parseInt(this.state.pageNo) - 1));
+            history.push('/search/' + this.state.category + '/' + this.state.searchString + '/' + String(parseInt(this.state.pageNo, 10) - 1));
         } else {
-            history.push('/' + this.state.category + '/' + String(parseInt(this.state.pageNo) - 1));
+            history.push('/' + this.state.category + '/' + String(parseInt(this.state.pageNo, 10) - 1));
         }
     }
 

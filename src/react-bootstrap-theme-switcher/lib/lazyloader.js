@@ -1,4 +1,3 @@
-"use strict";
 //
 // LazyLoader from here:
 // https://github.com/LukasBombach/Lazyloader

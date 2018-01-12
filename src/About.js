@@ -153,7 +153,7 @@ class About extends Component {
 
                     <ul className="social-buttons">
                         <li id="demo1">
-                            <a href="https://www.twitter.com/Salmaaan" className="brandico-twitter-bird"/>
+                            <a href="https://www.twitter.com/Salmaaan" className="brandico-twitter-bird" />
                         </li>
                         <li id="demo2">
                             <a href="https://www.facebook.com/salmaanpehlari" className="brandico-facebook"/>
@@ -190,7 +190,7 @@ class About extends Component {
                             <p> - SEO stuff.</p>
                             <p> - Created structured data layout according to google's layout. Doesn't seem to be
                                 working though.</p>
-                            <p> - Made the website scalable. <sup>(yes! for all of you 10 active users 🤗 )</sup></p>
+                            <p> - Made the website scalable. <sup>(yes! for all of you 10 active users <span aria-label="Hug" role={"img"}>🤗</span> )</sup></p>
                             <p> - Moved database to the cloud, added a loadbalancer to the mix and turned on
                                 autoscaling.</p>
                             <p> - Added new categories!</p>
