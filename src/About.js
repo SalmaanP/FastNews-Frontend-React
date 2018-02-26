@@ -26,7 +26,7 @@ class About extends Component {
                     <hr style={{width: "75%"}}/>
 
                     <p align="center">
-                        This guy <a href={"http://www.salmaan.me"} target={"_blank"}>(Me)</a> created a News Aggregator
+                        This guy <a rel={"noopener"} href={"http://www.salmaan.me"} target={"_blank"}>(Me)</a> created a News Aggregator
                         and Summarizer using Go, React, Python, Redis, AWS. Enjoy!
                     </p>
 
