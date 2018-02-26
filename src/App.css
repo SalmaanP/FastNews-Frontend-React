@@ -161,19 +161,94 @@
     align-self: end;
 }
 
-@media only screen and (min-width: 600px) {
+
+@media (min-width: 1281px) {
+
     .layoutGrid {
         grid-template-columns: repeat(3, 1fr);
     }
 
 }
 
-@media only screen and (max-width: 600px) {
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    .layoutGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .layoutGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    .layoutGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .layoutGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (max-width: 480px) {
 
     .layoutGrid {
         grid-template-columns: repeat(1, 1fr);
     }
+
 }
+
+
+/*@media only screen and (min-width: 600px) {*/
+    /*.layoutGrid {*/
+        /*grid-template-columns: repeat(3, 1fr);*/
+    /*}*/
+
+/*}*/
+
+/*@media only screen and (max-width: 600px) {*/
+
+    /*.layoutGrid {*/
+        /*grid-template-columns: repeat(1, 1fr);*/
+    /*}*/
+/*}*/
 
 
 /*https://codepen.io/ndeniche/pen/ljbDL*/

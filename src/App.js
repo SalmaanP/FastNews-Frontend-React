@@ -337,7 +337,7 @@ class App extends Component {
                 for (let i = 0; i < nRows; i++) {
                     for (let j = 0; j < nCols && (i * nCols) + j < total_articles; j++) {
                         layout.push(
-                            <div key={(i * nCols) + j} className="col-md-4 column">
+                            <div key={(i * nCols) + j} className="card-columns">
                                 <ArticleCard articleDetails={props.articles[(i * nCols) + j]}/>
                             </div>)
                     }
@@ -369,6 +369,7 @@ class App extends Component {
                 </div>
             )
         };
+
 
         const ArticleView = (props) => {
             if (!props.article.KeyPoints) {
