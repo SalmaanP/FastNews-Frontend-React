@@ -299,7 +299,7 @@ class App extends Component {
 
                     <CardHeader style={{overflow: 'hidden', textOverflow: 'ellipsis'}} className="articleHeader">
                         <CardTitle style={{marginTop: '0'}}>
-                            <a target={"_blank"} style={{textDecoration: "none", color: "inherit"}}
+                            <a rel={"noopener"} target={"_blank"} style={{textDecoration: "none", color: "inherit"}}
                                href={props.articleDetails.Url}>
                                 {props.articleDetails.Title}
                             </a>
@@ -386,7 +386,7 @@ class App extends Component {
 
                             <div className={"specificHeader"}>
                                 <h1>
-                                    <a target={"_blank"} style={{textDecoration: "none", color: "inherit"}}
+                                    <a rel={"noopener"} target={"_blank"} style={{textDecoration: "none", color: "inherit"}}
                                        href={props.article.Url}>{props.article.Title}</a>
                                 </h1>
                             </div>
@@ -406,7 +406,7 @@ class App extends Component {
                             </div>
                             <div className={"specificFooter"}>
                                 <div className={"specificComments"}>
-                                    <a target={"_blank"}
+                                    <a rel={"noopener"} target={"_blank"}
                                        href={props.article.Permalink}>View {props.article.Comments} Reddit
                                         Comments</a>
                                 </div>
@@ -414,7 +414,7 @@ class App extends Component {
 
                                     <a className="resp-sharing-button__link"
                                        href={"https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Ffastnews.me/article/" + this.state.category + '/' + props.article.Id}
-                                       target="_blank" aria-label="">
+                                       target="_blank" aria-label="" rel={"noopener"}>
                                         <div
                                             className="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
                                             <div aria-hidden="true"
@@ -429,7 +429,7 @@ class App extends Component {
 
                                     <a className="resp-sharing-button__link"
                                        href={"https://twitter.com/intent/tweet/?text=" + props.article.Title + "&amp;url=http%3A%2F%2Ffastnews.me/article/" + this.state.category + '/' + props.article.Id}
-                                       target="_blank" aria-label="">
+                                       target="_blank" aria-label="" rel={"noopener"}>
                                         <div
                                             className="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
                                             <div aria-hidden="true"
@@ -444,7 +444,7 @@ class App extends Component {
 
                                     <a className="resp-sharing-button__link"
                                        href={"https://plus.google.com/share?url=http%3A%2F%2Ffastnews.me/article/" + this.state.category + '/' + props.article.Id}
-                                       target="_blank" aria-label="">
+                                       target="_blank" aria-label="" rel={"noopener"}>
                                         <div
                                             className="resp-sharing-button resp-sharing-button--google resp-sharing-button--small">
                                             <div aria-hidden="true"
@@ -474,7 +474,7 @@ class App extends Component {
 
                                     <a className="resp-sharing-button__link"
                                        href={"https://reddit.com/submit/?url=http%3A%2F%2Ffastnews.me/article/" + this.state.category + '/' + props.article.Id + '&title=' + props.article.Title}
-                                       target="_blank" aria-label="">
+                                       target="_blank" aria-label="" rel={"noopener"}>
                                         <div
                                             className="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small">
                                             <div aria-hidden="true"
