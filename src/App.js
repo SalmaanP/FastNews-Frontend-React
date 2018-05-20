@@ -294,7 +294,7 @@ class App extends Component {
         const ArticleCard = (props) => {
             return (
 
-                <Card className={"articleCard"}
+                <Card className={"articleCard effect2"}
                       style={this.state.articleCardStyle}>
 
                     <CardHeader style={{overflow: 'hidden', textOverflow: 'ellipsis'}} className="articleHeader">
