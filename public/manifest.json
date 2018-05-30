@@ -1,6 +1,6 @@
 {
   "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "background_color": "transparent",
   "scope": "/",
   "short_name" : "FastNews",
   "name" : "FastNews",
