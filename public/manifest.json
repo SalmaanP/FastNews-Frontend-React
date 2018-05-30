@@ -4,7 +4,7 @@
   "scope": "/",
   "short_name" : "FastNews",
   "name" : "FastNews",
-  "start_url" : "https://fastnews.me/worldnews/0",
+  "start_url" : "https://www.fastnews.me/worldnews/0",
   "display" : "standalone",
   "lang" : "English",
   "orientation" : "any",
