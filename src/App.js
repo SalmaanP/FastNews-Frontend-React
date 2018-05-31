@@ -262,6 +262,7 @@ class App extends Component {
     render() {
 
 
+
         const PaginationButton = (props) => {
             if (this.state.articles && props.type === 'increment' && this.state.articles.length > 0) {
                 return (
@@ -292,6 +293,36 @@ class App extends Component {
         };
 
         const ArticleCard = (props) => {
+
+            const data = {
+                "@context": "https://schema.org",
+                "@type": "NewsArticle",
+                "isFamilyFriendly": "true",
+                "inLanguage": "en",
+                "description": props.articleDetails.Summary,
+                "name": props.articleDetails.Title,
+                "headline": props.articleDetails.Title,
+                "datePublished": props.articleDetails.Date,
+                "dateModified": props.articleDetails.Date,
+                "articleBody": props.articleDetails.KeyPoints.join('\n'),
+                "image": {
+                    "@type": "imageObject",
+                    "url": "https://www.fastnews.me/logo.png",
+                    "height": "800",
+                    "width": "800"
+                },
+                "author": props.articleDetails.Domain,
+                "url": props.articleDetails.Url,
+                "publisher": {
+                    "@type": "Organization",
+                    "name": props.articleDetails.Domain,
+                    "logo": {
+                        "@type": "imageObject",
+                        "url": props.articleDetails.Url
+                    }
+                }
+            };
+
             return (
 
                 <Card className={"articleCard effect2"}
@@ -299,7 +330,7 @@ class App extends Component {
 
                     <CardHeader style={{overflow: 'hidden', textOverflow: 'ellipsis'}} className="articleHeader">
                         <CardTitle style={{marginTop: '0'}}>
-                            <a rel={"noopener"} target={"_blank"} style={{textDecoration: "none", color: "inherit"}}
+                            <a itemProp="url" rel={"noopener"} target={"_blank"} style={{textDecoration: "none", color: "inherit"}}
                                href={props.articleDetails.Url}>
                                 {props.articleDetails.Title}
                             </a>
@@ -315,9 +346,13 @@ class App extends Component {
                             Keypoints</Button>
                         {/*</Link>*/}
                         <CardSubtitle className={"articleDomain"} style={{verticalAlign: 'text-bottom'}}>
-                            <small>{props.articleDetails.Domain}</small>
+                            <small >{props.articleDetails.Domain}</small>
                         </CardSubtitle>
+                        <link href="https://www.fastnews.me/logo.png" />
                     </div>
+                    <script type="application/ld+json">
+                        {JSON.stringify(data)}
+                    </script>
                 </Card>
 
             )
@@ -337,7 +372,7 @@ class App extends Component {
                 for (let i = 0; i < nRows; i++) {
                     for (let j = 0; j < nCols && (i * nCols) + j < total_articles; j++) {
                         layout.push(
-                            <div key={(i * nCols) + j} className="card-columns">
+                            <div key={(i * nCols) + j} className="card-columns" itemScope itemType="http://schema.org/NewsArticle">
                                 <ArticleCard articleDetails={props.articles[(i * nCols) + j]}/>
                             </div>)
                     }
@@ -382,9 +417,11 @@ class App extends Component {
                         <div style={{display: "grid", justifyContent: "right"}}>
                             <span onClick={this.changeView} className={"close hairline"}/>
                         </div>
-                        <div className={"specificGrid"}>
-
-                            <div className={"specificHeader"}>
+                        <div className={"specificGrid"}  itemScope itemType="http://schema.org/NewsArticle">
+                            <meta itemProp="inLanguage" content="en" />
+                            <meta itemProp="isFamilyFriendly" content="true" />
+                            <meta itemProp={"description"} content={props.article.Summary} />
+                            <div className={"specificHeader"} itemProp="name headline mainEntityOfPage">
                                 <h1>
                                     <a rel={"noopener"} target={"_blank"} style={{textDecoration: "none", color: "inherit"}}
                                        href={props.article.Url}>{props.article.Title}</a>
@@ -392,13 +429,13 @@ class App extends Component {
                             </div>
                             <div className={"specificInfo"}>
                                 <div className={"specificDate"}>
-                                    <h6>{moment(props.article.Date).format("MMM DD Y (dddd)")}</h6>
+                                    <h6 itemProp={"datePublished dateModified"} >{moment(props.article.Date).format("MMM DD Y (dddd)")}</h6>
                                 </div>
-                                <div className={"specificDomain"}>
+                                <div className={"specificDomain"} itemProp={"author"}>
                                     <h6>{props.article.Domain}</h6>
                                 </div>
                             </div>
-                            <div className={"specificBody"}>
+                            <div itemProp={"articleBody"} className={"specificBody"}>
                                 <ul>
                                     {props.article.KeyPoints.map((point, index) => <li key={index}><p
                                         style={{fontSize: "20px"}}>{point}</p></li>)}
@@ -501,6 +538,20 @@ class App extends Component {
                                     Popularity: {props.article.Score}
                                 </div>
                             </div>
+                            <link itemProp="image" href="https://www.fastnews.me/logo.png" />
+
+                            <span itemType="https://schema.org/Organization" itemScope="itemScope" itemProp="publisher">
+                                <link itemProp="url" href={props.article.Domain} />
+                                    <meta itemProp="name" content={props.article.Domain} />
+                                    <span itemProp="logo" itemScope itemType="https://schema.org/ImageObject">
+                                        <meta itemProp="url" content={props.article.Url} /><meta itemProp="width" content="600" /><meta itemProp="height" content="60" />
+                                    </span>
+                            </span>
+
+
+
+
+
                         </div>
                     </div>
                 )
