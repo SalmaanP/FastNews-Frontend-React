@@ -198,7 +198,6 @@ class App extends Component {
         });
     }
 
-
     changeView(article) {
 
         if (this.state.view === 'article' && this.state.articles.length < 1) {
@@ -260,8 +259,6 @@ class App extends Component {
     }
 
     render() {
-
-
 
         const PaginationButton = (props) => {
             if (this.state.articles && props.type === 'increment' && this.state.articles.length > 0) {
@@ -329,7 +326,7 @@ class App extends Component {
                       style={this.state.articleCardStyle}>
 
                     <CardHeader style={{overflow: 'hidden', textOverflow: 'ellipsis'}} className="articleHeader">
-                        <CardTitle style={{marginTop: '0'}}>
+                        <CardTitle className={"h4"} style={{marginTop: '0'}}>
                             <a itemProp="url" rel={"noopener"} target={"_blank"} style={{textDecoration: "none", color: "inherit"}}
                                href={props.articleDetails.Url}>
                                 {props.articleDetails.Title}
@@ -358,7 +355,6 @@ class App extends Component {
             )
 
         };
-
 
         const GridLayout = (props) => {
             if (props.articles) {
@@ -404,7 +400,6 @@ class App extends Component {
                 </div>
             )
         };
-
 
         const ArticleView = (props) => {
             if (!props.article.KeyPoints) {

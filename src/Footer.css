@@ -1,0 +1,42 @@
+.FooterGrid {
+    /*border-top: thin solid #333;*/
+    margin-top: 2%;
+    padding-top: 1%;
+    padding-left: 6%;
+    padding-right: 6%;
+    display: grid;
+    grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr auto;
+    grid-template-areas: "FooterSource FooterFeedback FooterWinApp FooterAmzApp FooterTop";
+}
+
+.FooterFeedback {
+    padding: 10px;
+    grid-area: FooterFeedback;
+}
+
+.FooterSource {
+    padding: 10px;
+    grid-area: FooterSource;
+}
+
+.FooterDonate {
+    padding: 10px;
+    grid-area: FooterDonate;
+}
+
+.FooterWinApp {
+    padding: 10px;
+    grid-area: FooterWinApp;
+}
+
+.FooterAmzApp {
+    padding: 10px;
+    grid-area: FooterAmzApp;
+}
+
+.FooterTop {
+    padding: 10px;
+    grid-area: FooterTop;
+    justify-self: end;
+    align-self: end;
+}
